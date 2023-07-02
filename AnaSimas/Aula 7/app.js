@@ -1,15 +1,3 @@
-// function atv1(){
-//     const inputArray = document.getElementById('dobrarValor').value;
-//     let arraySplit = inputArray.split(',');
-//     let arrayDobrado = [];
-//     console.log(arraySplit)
-//     for(var i = 0; i < arraySplit.length; i++){
-//         arrayDobrado[i] = arraySplit[i] * 2;
-//     }
-//     document.getElementById('resultadoAtv1').innerHTML = arrayDobrado;
-//     document.getElementById('dobrarValor').value = '';
-// }
-
 // Dado um array de números, utilize a função map() para criar um novo array onde cada valor seja o dobro do valor correspondente do array original.
 
 function atv1(){
@@ -43,27 +31,25 @@ class Objeto {
     }
 }
 
+var arrayObj = [];
+function editar(nome){
+    const arrayCarac = ['Bonito(a)', 'Feio(a)', 'Legal', 'Chato(a)'];
+    caracteristica = arrayCarac[Math.floor(Math.random() * arrayCarac.length)];
+    let objeto = new Objeto(nome, caracteristica);
+    arrayObj.push(objeto);
+}
+
 function atv3(){
     const nome1 = document.getElementById('propriedade1').value;
     const nome2 = document.getElementById('propriedade2').value;
     const nome3 = document.getElementById('propriedade3').value;
 
     const arrayNomes = [nome1, nome2, nome3];
+    arrayNomes.forEach(editar);
 
-    function editar(nome){
-        const arrayCarac = ['Bonito(a)', 'Feio(a)', 'Legal', 'Chato(a)'];
-        caracteristica = arrayCarac[Math.floor(Math.random() * arrayCarac.length)];
-        let objeto = new Objeto(nome, caracteristica);
-        let arrayObjetos = [];
-        arrayObjetos.push(objeto);
-    }
-
-    let arrayObj = [];
-    arrayObj = arrayNomes.forEach(editar);
-
-    // let mapFunction3 = arrayObj.map(function(elemento){
-    //     return elemento.caracteristica;
-    // });
+    let mapFunction3 = arrayObj.map(function(elemento){
+        return elemento.caracteristica;
+    });
 
     document.getElementById('resultadoAtv3').innerHTML = mapFunction3;
     document.getElementById('propriedade1').value = '';
