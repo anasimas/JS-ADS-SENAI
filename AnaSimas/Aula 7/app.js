@@ -59,6 +59,19 @@ function atv3(){
 
 //Dado um array de números, utilize a função map() para criar um novo array onde cada valor seja a média dos valores anteriores, incluindo o valor atual.
 
+// 1,2,3,4,5,6
+
+function atv4(){
+    const valores = document.getElementById('valor1').value;
+    const arrayNumeros = valores.split(',');
+
+    let mapAtividade4 = arrayNumeros.map(function(numero, arrayNumeros){
+        
+    });
+
+    document.getElementById('resultadoAtv4').innerHTML = mapAtividade4;
+}
+
 //Dado um array de strings, utilize a função map() para criar um novo array onde cada string esteja sem espaços em branco.
 
 //Simulação de uma requisição HTTP assíncrona.(promisses)
