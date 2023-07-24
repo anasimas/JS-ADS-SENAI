@@ -65,8 +65,10 @@ function atv4(){
     const valores = document.getElementById('valor1').value;
     const arrayNumeros = valores.split(',');
 
-    let mapAtividade4 = arrayNumeros.map(function(numero, arrayNumeros){
-        
+    let mapAtividade4 = arrayNumeros.map(function(numero, index, arrayNumeros){
+        let valor = arrayNumeros.slice(0,(index+1));
+        let soma = valor.reduce((acumuladora, valor) => acumuladora + valor);
+        return soma/valor.length;
     });
 
     document.getElementById('resultadoAtv4').innerHTML = mapAtividade4;
