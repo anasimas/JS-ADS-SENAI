@@ -65,10 +65,10 @@ function atv4(){
     const valores = document.getElementById('valor1').value;
     const arrayNumeros = valores.split(',');
 
-    let mapAtividade4 = arrayNumeros.map(function(numero, index, arrayNumeros){
-        let valor = arrayNumeros.slice(0,(index+1));
-        let soma = valor.reduce((acumuladora, valor) => acumuladora + valor);
-        return soma/valor.length;
+    let mapAtividade4 = arrayNumeros.map((numero, index, arrayNumeros) => {
+        let valor = arrayNumeros.slice(0,index+1);
+        let soma = valor.reduce((acumuladora, numero) => acumuladora + numero);
+        return soma/ (index+1);
     });
 
     document.getElementById('resultadoAtv4').innerHTML = mapAtividade4;
@@ -76,6 +76,31 @@ function atv4(){
 
 //Dado um array de strings, utilize a função map() para criar um novo array onde cada string esteja sem espaços em branco.
 
+function atv5(){
+    const arrayOriginal = document.getElementById('valor1_atv5').value;
+    const arraySeparado = arrayOriginal.split(',');
+
+    const arrayEditado = arraySeparado.map((string) => {
+        return string.trim();
+    });
+
+    document.getElementById('resultadoAtv5').innerHTML = arrayEditado;
+}
+
 //Simulação de uma requisição HTTP assíncrona.(promisses)
+
+function atv6(){
+    fetch("exemplo de http", {
+        method: "GET",
+        header: {
+            "Content-type": "application/json",
+        },
+        body: {
+            data: "test"
+        }
+    })
+    .then((resposta) => console.log(resposta))
+    .catch((erro) => console.log(erro));
+}
 
 //Ler um arquivo assincronamente(promisses)
