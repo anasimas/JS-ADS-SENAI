@@ -60,9 +60,28 @@
 
 <!-- //Simulação de uma requisição HTTP assíncrona.(promisses) -->
 
-
+<div class="atv6">
+    <p>Simulação de uma requisição HTTP assíncrona.(promisses)</p>
+    <textarea name="codigoFunc6" id="codFunc6" cols="30" rows="20" readonly style="resize: none">    
+        function atv6(){
+            fetch("exemplo de http", {
+                method: "GET",
+                header: {
+                    "Content-type": "application/json",
+                },
+                body: {
+                    data: "test"
+                }
+            })
+            .then((resposta) => console.log(resposta))
+            .catch((erro) => console.log(erro));
+        }
+        </textarea>
+</div>
 
 <!-- //Ler um arquivo assincronamente(promisses) -->
+
+
 </body>
 <link rel="stylesheet" href="style.css">
 <script src="app.js"></script>
